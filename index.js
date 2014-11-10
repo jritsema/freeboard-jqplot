@@ -2,9 +2,9 @@
 
   var jqPlotWidget = function (settings) {
 
-    var self = this;
-    var htmlElement;
+    var self = this;    
     var currentSettings = settings;
+    var htmlElement;
     var data;
     var options;
     var chartHeight = 300;
@@ -20,7 +20,7 @@
       //add the chart div to the dom
       var chartDiv = '<div id="' + currentSettings.id + '" style="height:' + currentSettings.chartHeight + 'px;width:' + currentSettings.chartWidth + 'px;"></div>';
       console.log(chartDiv);
-      var htmlElement = $(chartDiv);
+      htmlElement = $(chartDiv);
       $(element).append(htmlElement);
     }
 
@@ -39,6 +39,7 @@
         options = newValue;
 
       //render the chart
+      htmlElement.empty();
       $.jqplot(currentSettings.id, data, options);
     }
 
