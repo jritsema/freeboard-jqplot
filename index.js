@@ -96,7 +96,7 @@
       },
       {
         "name": "chartWidth",
-        "display_name": "Chart Widgth (px)",
+        "display_name": "Chart Width (px)",
         "type": "number",
         "default_value": 300,
         "description": "chart width in pixels (require freeboard config reload/refresh)"
