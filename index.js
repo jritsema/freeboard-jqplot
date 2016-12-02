@@ -7,8 +7,8 @@
     var htmlElement;
     var data;
     var options;
-    var chartHeight = 300;
-    var chartWidth = 300;
+    var chartHeight = currentSettings.chartHeight;
+    var chartWidth = currentSettings.chartWidth;
 
     //seems to be called once (or after settings change)
     this.render = function (element) {
@@ -31,12 +31,16 @@
     //seems to be called after render whenever a calculated value changes
     this.onCalculatedValueChanged = function (settingName, newValue) {
       console.log('onCalculatedValueChanged for ' + settingName);
+      console.log(newValue);
 
       if (settingName == 'data')
         data = newValue;
         
       if (settingName == 'options')
         options = newValue;
+
+      chartHeight = currentSettings.chartHeight;
+      chartWidth = currentSettings.chartWidth;
 
       //render the chart
       htmlElement.empty();
@@ -88,14 +92,14 @@
         "display_name": "Chart Height (px)",
         "type": "number",
         "default_value": 300,
-        "description": "chart height in pixels"
+        "description": "chart height in pixels (require freeboard config reload/refresh)"
       },
       {
         "name": "chartWidth",
-        "display_name": "Chart Widgth (px)",
+        "display_name": "Chart Width (px)",
         "type": "number",
         "default_value": 300,
-        "description": "chart width in pixels"
+        "description": "chart width in pixels (require freeboard config reload/refresh)"
       },      
       {
         "name": "height",
