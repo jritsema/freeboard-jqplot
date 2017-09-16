@@ -26,3 +26,5 @@ head.js(
     freeboard.initialize(true);
   })
 ```
+
+For a better development experience checkout the [widget template](https://github.com/jritsema/freeboard-jqplot-widget) which has tooling that lets you configure a widget instance in files and auto-update a dashboard.json.
